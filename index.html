@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo da Velha - Frutas</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Jogo da Velha - Frutas</h1>
+    <div id="menu">
+        <h2>Escolha a fruta do Jogador 1:</h2>
+        <select id="fruta-jogador1" onchange="atualizarOpcoesFruta()">
+            <option value="🍎">Maçã</option>
+            <option value="🍍">Abacaxi</option>
+            <option value="🍌">Banana</option>
+            <option value="🍉">Melancia</option>
+            <option value="🍇">Uva</option>
+        </select>
+        <h2>Escolha a fruta do Jogador 2:</h2>
+        <select id="fruta-jogador2">
+            <option value="🍍">Abacaxi</option>
+            <option value="🍎">Maçã</option>
+            <option value="🍌">Banana</option>
+            <option value="🍉">Melancia</option>
+            <option value="🍇">Uva</option>
+        </select>
+        <div id="mensagem-erro" style="color: red;"></div>
+        <h2>Escolha o modo de jogo:</h2>
+        <button onclick="iniciarJogo('amigo')">Jogar Contra Amigo</button>
+        <button onclick="iniciarJogo('ia', 'facil')">Jogar Contra IA (Fácil)</button>
+        <button onclick="iniciarJogo('ia', 'medio')">Jogar Contra IA (Médio)</button>
+        <button onclick="iniciarJogo('ia', 'dificil')">Jogar Contra IA (Difícil)</button>
+    </div>
+    <div id="container-jogo" style="position: relative;">
+        <div id="tabuleiro" class="tabuleiro" style="display: none;">
+            <div class="celula" id="celula-0" onclick="fazerJogada(this, 0)"></div>
+            <div class="celula" id="celula-1" onclick="fazerJogada(this, 1)"></div>
+            <div class="celula" id="celula-2" onclick="fazerJogada(this, 2)"></div>
+            <div class="celula" id="celula-3" onclick="fazerJogada(this, 3)"></div>
+            <div class="celula" id="celula-4" onclick="fazerJogada(this, 4)"></div>
+            <div class="celula" id="celula-5" onclick="fazerJogada(this, 5)"></div>
+            <div class="celula" id="celula-6" onclick="fazerJogada(this, 6)"></div>
+            <div class="celula" id="celula-7" onclick="fazerJogada(this, 7)"></div>
+            <div class="celula" id="celula-8" onclick="fazerJogada(this, 8)"></div>
+        </div>
+        <div id="linha-vencedora" class="linha-vencedora" style="display: none;"></div>
+    </div>
+    <div id="mensagem"></div>
+    <button onclick="reiniciarJogo()" style="display: none;">Reiniciar Jogo</button>
+    <button onclick="voltarMenu()" style="display: none;">Voltar ao Menu</button>
+    <script src="script.js"></script>
+</body>
+</html>
